@@ -34,3 +34,14 @@ validate_number() {
     
     return 0
 }
+
+# Function to calculate simple interest
+calculate_interest() {
+    local p=$1
+    local r=$2
+    local t=$3
+    
+    # The actual calculation
+    local interest=$(echo "scale=2; $p * $r * $t / 100" | bc -l)
+    echo "$interest"
+}
